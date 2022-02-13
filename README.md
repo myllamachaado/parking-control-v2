@@ -18,4 +18,4 @@ mvn spring-boot:run
 
 A descrição com todos os endpoints da aplicação pode ser encontrada [neste link](https://documenter.getpostman.com/view/18686677/UVeNm2nE).
 
-![image]({https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white}) ![image]({https://img.shields.io/badge/apache_maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white}) ![image]({https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white})
+![image](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![image](https://img.shields.io/badge/apache_maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white) ![image](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
