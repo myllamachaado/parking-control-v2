@@ -1,0 +1,24 @@
+package com.api.parkingcontrol.dto.car;
+
+import com.api.parkingcontrol.models.BrandModel;
+import lombok.*;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class RegCarDTO {
+
+   @NotBlank
+   @Size(max = 70)
+   private String modelCar;
+
+   @NotBlank
+   @Size(max = 70)
+   private String brandCar;
+
+}
