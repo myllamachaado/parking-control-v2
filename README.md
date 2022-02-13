@@ -3,9 +3,11 @@ Projeto de uma API REST Java que gerencia vagas de estacionamento - V2
 
 Projeto desenvolvido no curso de Spring Boot ministrado pela [Michelle Brito](https://github.com/MichelliBrito). O projeto consiste em desenvovler um gerenciador de vagas de estacionamento. Essa versão possui as seguintes melhorias citadas no curso:
 
-Criar entidades próprias para o carro e a marca (junto com seus respectivos services e controllers)
-Utilização de Mappers no lugar da propriedade BeanUtils.copyProperties
-Adição de um ExceptionHadler
+[x]Criar entidades próprias para o carro e a marca (junto com seus respectivos services e controllers)
+
+[x]Utilização de Mappers no lugar da propriedade BeanUtils.copyProperties
+
+[x]Adição de um ExceptionHadler
 
 
 
