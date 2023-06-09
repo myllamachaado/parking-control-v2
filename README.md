@@ -1,7 +1,38 @@
 # Parking Control V2
 Projeto de uma API REST Java que gerencia vagas de estacionamento - V2
 
-![image](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![image](https://img.shields.io/badge/apache_maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white) ![image](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white) ![image](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
+<p align="center">
+    <a alt="Java">
+          <img src="https://img.shields.io/badge/Java-v17-blue.svg" />
+    </a>
+    <a alt="Spring Boot">
+        <img src="https://img.shields.io/badge/Spring_Boot-v3.1.0-red.svg" />
+    </a>
+    <a alt="Spring Security">
+        <img src="https://img.shields.io/badge/Spring_Security-v5.3.1-blueviolet.svg" />
+    </a>
+  <a alt="Maven">
+        <img src="https://img.shields.io/badge/Maven-v3.1.1-orange.svg" />
+  </a>
+    <a alt="JPA">
+        <img src="https://img.shields.io/badge/JPA-v3.1.0-brightgreen.svg" />
+    </a>
+     <a alt="Validation">
+        <img src="https://img.shields.io/badge/Validation-v3.0.2-red.svg" />
+  </a>
+     <a alt="Model Mapper">
+        <img src="https://img.shields.io/badge/Model_Mapper-v3.1.1-orange.svg" />
+  </a>
+  <a alt="Lombok">
+          <img src="https://img.shields.io/badge/Lombok-v1.18.20.0-blue.svg" />
+    </a>
+    <a alt="MySql">
+        <img src="https://img.shields.io/badge/MySql-v2.1.214-brightgreen.svg" />
+    </a>
+     <a alt="JUnit">
+        <img src="https://img.shields.io/badge/JUnit-v4.13.2-red.svg" />
+    </a>
+</p>
 
 
 Projeto desenvolvido no curso de Spring Boot ministrado pela [Michelle Brito](https://github.com/MichelliBrito). O projeto consiste em desenvovler um gerenciador de vagas de estacionamento. Essa versão possui as seguintes melhorias citadas no curso:
@@ -13,6 +44,9 @@ Projeto desenvolvido no curso de Spring Boot ministrado pela [Michelle Brito](ht
 
 - [x] Adição de um ExceptionHadler
 
+- [x] Adição do Spring Security
+
+- [x] Adição de endpoints (GET / POST / PUT / UPDATE) para manipular o Usuário 
 
 
 
@@ -22,7 +56,5 @@ Para executar o projeto na sua máquina, digite o seguinte comando:
 ```
 mvn spring-boot:run 
 ```
-
-Observação: Como é possível observar no arquivo application.properties a porta padrão desse projeto é 8081 e não 8080.
 
 A descrição com todos os endpoints da aplicação pode ser encontrada [neste link](https://documenter.getpostman.com/view/18686677/UVeNm2nE).
