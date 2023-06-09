@@ -57,4 +57,4 @@ Para executar o projeto na sua máquina, digite o seguinte comando:
 mvn spring-boot:run 
 ```
 
-A descrição com todos os endpoints da aplicação pode ser encontrada [neste link](https://documenter.getpostman.com/view/18686677/UVeNm2nE).
+A descrição com todos os endpoints da aplicação pode ser encontrada [neste link](https://github.com/myllamachaado/parking-control-v2/tree/main/src/postman).
