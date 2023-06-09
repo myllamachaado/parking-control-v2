@@ -2,6 +2,7 @@ package com.api.parkingcontrol.dto.parkingSpot;
 
 import com.api.parkingcontrol.dto.car.CarDTO;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -13,6 +14,8 @@ import javax.validation.constraints.Size;
 @ToString
 public class ParkingSpotDTO {
 
+   private String id;
+
    @NotBlank
    private String parkingSpotNumber;
 
@@ -21,7 +24,7 @@ public class ParkingSpotDTO {
    private String licensePlateCar;
 
    @NotBlank
-   private CarDTO modelCar;
+   private CarDTO carInfo;
 
    @NotBlank
    private String colorCar;

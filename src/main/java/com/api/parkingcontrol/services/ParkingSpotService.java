@@ -19,7 +19,7 @@ import java.time.ZoneId;
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+@AllArgsConstructor
 public class ParkingSpotService {
 
    private final ParkingSpotRepository parkingSpotRepository;

@@ -2,6 +2,7 @@ package com.api.parkingcontrol.exceptions;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,17 +11,15 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import javax.imageio.IIOException;
+import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolation;
 import java.net.MalformedURLException;
-import java.util.List;
 
 @ControllerAdvice
 public class PersonalizedExceptionHandler {
 
    @ExceptionHandler(value = {LicensePlateInUse.class})
-   public ResponseEntity<ErrorMessage> entityNotFound(LicensePlateInUse e, HttpServletRequest request) {
+   public ResponseEntity<ErrorMessage> licensePlateInUse(LicensePlateInUse e, HttpServletRequest request) {
       String errorDescription = e.getLocalizedMessage();
       return new ResponseEntity<>(
               new ErrorMessage(errorDescription),
@@ -30,7 +29,17 @@ public class PersonalizedExceptionHandler {
    }
 
    @ExceptionHandler(value = {ParkingSpotInUse.class})
-   public ResponseEntity<ErrorMessage> entityNotFound(ParkingSpotInUse e, HttpServletRequest request) {
+   public ResponseEntity<ErrorMessage> parkingSpotInUse(ParkingSpotInUse e, HttpServletRequest request) {
+      String errorDescription = e.getLocalizedMessage();
+      return new ResponseEntity<>(
+              new ErrorMessage(errorDescription),
+              new HttpHeaders(),
+              HttpStatus.NOT_FOUND
+      );
+   }
+
+   @ExceptionHandler(value = {EntityNotFoundException.class})
+   public ResponseEntity<ErrorMessage> entityNotFound(EntityNotFoundException e, HttpServletRequest request) {
       String errorDescription = e.getLocalizedMessage();
       return new ResponseEntity<>(
               new ErrorMessage(errorDescription),
@@ -77,6 +86,15 @@ public class PersonalizedExceptionHandler {
               new HttpHeaders(),
               HttpStatus.METHOD_NOT_ALLOWED
       );
+   }
+
+   @ExceptionHandler(value = {EmptyResultDataAccessException.class})
+   public ResponseEntity<ErrorMessage> emptyResultDataAccess(EmptyResultDataAccessException e, HttpServletRequest request) {
+      String errorDescription = "Registro não encontrado no banco de dados.";
+
+      return new ResponseEntity<>(new ErrorMessage(errorDescription),
+              new HttpHeaders(), HttpStatus.NOT_FOUND);
+
    }
 
    @ExceptionHandler(value = {DataIntegrityViolationException.class})

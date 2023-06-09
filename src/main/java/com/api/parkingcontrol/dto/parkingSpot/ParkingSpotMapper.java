@@ -11,12 +11,12 @@ public class ParkingSpotMapper {
       CarModel car = new CarModel(dto.getModelCar());
 
       return new ParkingSpotModel(null, dto.getParkingSpotNumber(), dto.getLicensePlateCar(),
-              car, dto.getColorCar(), null, dto.getResponsableName(),
+              car, dto.getColorCar(), dto.getRegistrationDate(), dto.getResponsableName(),
               dto.getApartment(), dto.getBlock());
    }
 
    public static ParkingSpotDTO fromEntity(ParkingSpotModel parkingSpotModel){
-      return new ParkingSpotDTO(parkingSpotModel.getParkingSpotNumber(),
+      return new ParkingSpotDTO(parkingSpotModel.getId(), parkingSpotModel.getParkingSpotNumber(),
               parkingSpotModel.getLicensePlateCar(),
               CarMapper.fromEntity(parkingSpotModel.getModelCar()),
               parkingSpotModel.getColorCar(), parkingSpotModel.getResponsableName(),

@@ -1,5 +1,6 @@
 package com.api.parkingcontrol.dto.car;
 
+import com.api.parkingcontrol.dto.brand.BrandMapper;
 import com.api.parkingcontrol.models.BrandModel;
 import com.api.parkingcontrol.models.CarModel;
 
@@ -13,7 +14,7 @@ public class CarMapper {
    }
 
    public static CarDTO fromEntity(CarModel car){
-      return new CarDTO(car.getModelCar(), car.getBrandCar().getBrandCar());
+      return new CarDTO(car.getModelCar(), BrandMapper.fromEntity(car.getBrandCar()));
    }
 
 }
