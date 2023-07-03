@@ -1,16 +1,16 @@
 version: '3'
 services:
-  parking_control:
+  parking:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: parking_control
-    container_name: parking_control
+    image: parking
+    container_name: parking
     ports:
       - '8080:8080'
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/parking_control_db
-      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/parking
+      - SPRING_DATASOURCE_USERNAME=dev
       - SPRING_DATASOURCE_PASSWORD=dev123
       - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.cj.jdbc.Driver
     depends_on:
@@ -24,12 +24,21 @@ services:
       - '3306:3306'
     environment:
       - MYSQL_ROOT_HOST=%
-      - MYSQL_DATABASE=parking_control_db
+      - MYSQL_DATABASE=parking
       - MYSQL_USER=dev
       - MYSQL_PASSWORD=dev123
       - MYSQL_ROOT_PASSWORD=dev123
     volumes:
-      - ./database:/var/lib/mysql
-
+      - ./db:/var/lib/mysql
+  flyway:
+    image: boxfuse/flyway:latest
+    container_name: flyway
+    command: -url=jdbc:mysql://db:3306/parking -user=root -password=dev123 migrate
+    volumes:
+      - ./migration:/flyway/sql
+    depends_on:
+      - db
+    links:
+      - db
 volumes:
-  database:
+  db:
