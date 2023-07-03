@@ -44,17 +44,45 @@ Projeto desenvolvido no curso de Spring Boot ministrado pela [Michelle Brito](ht
 
 - [x] Adição de um ExceptionHadler
 
-- [x] Adição do Spring Security
+- [x] Adição do Spring Security (basic auth)
 
 - [x] Adição de endpoints (GET / POST / PUT / UPDATE) para manipular o Usuário 
 
 
 
-### Execução do projeto
+### - Execução do projeto localmente
 
-Para executar o projeto na sua máquina, digite o seguinte comando:
+1) Faça um clone do repositório: git clone `https://github.com/myllamachaado/projeto-algalog-api-entregas.git`
+2) Compile o projeto: `mvn clean install`
+3) Ajuste o application.properties para comportaras configurações do seu banco de dados nos seguintes localis:
 ```
-mvn spring-boot:run 
-```
+spring.datasource.url=jdbc:mysql://<endereço do seu servidor local>:3306/parking
+spring.datasource.username=<seu usuário>
+spring.datasource.password=<sua senha>
 
-A descrição com todos os endpoints da aplicação pode ser encontrada [neste link](https://github.com/myllamachaado/parking-control-v2/tree/main/src/postman).
+spring.flyway.url=jdbc:mysql://<endereço do seu servidor local>:3306/parking
+spring.flyway.user=<seu usuario>
+spring.flyway.password=<sua senha>
+```
+4) Execute o projeto: mvn spring-boot::run
+
+
+### - Execução do projeto utilizando o Docker
+1)  Faça um clone do repositório:
+`git clone https://github.com/myllamachaado/projeto-algalog-api-entregas.git`
+2) Compile o projeto:
+`mvn clean install`
+3)  Execute o projeto:
+`docker-compose up -d`
+
+
+### - Basic Auth
+Os usuários pré cadastrados são:
+`user1 -> senha123`
+`user2 -> senha123`
+`user3 -> senha123`
+
+
+### - Postman collection
+
+A coleção com todos os endpoints para a execução se encontra no próprio projeto com o nome `Algawork.postman_collection.json`. Basta importar o arquivo json no postman para ter acesso a todos os endpoints. 
