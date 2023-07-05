@@ -64,7 +64,7 @@ spring.flyway.url=jdbc:mysql://<endereço do seu servidor local>:3306/parking
 spring.flyway.user=<seu usuario>
 spring.flyway.password=<sua senha>
 ```
-4) Execute o projeto: mvn spring-boot::run
+4) Execute o projeto: `mvn spring-boot::run`
 
 
 ### - Execução do projeto utilizando o Docker
