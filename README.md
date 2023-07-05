@@ -85,4 +85,4 @@ Os usuários pré cadastrados são:
 
 ### - Postman collection
 
-A coleção com todos os endpoints para a execução se encontra no próprio projeto com o nome `Algawork.postman_collection.json`. Basta importar o arquivo json no postman para ter acesso a todos os endpoints. 
+A coleção com todos os endpoints para a execução se encontra no próprio projeto na pasta de nome `postman`. Basta importar o arquivo json no postman para ter acesso a todos os endpoints. 
